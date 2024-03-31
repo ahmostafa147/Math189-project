@@ -123,14 +123,14 @@ Through our tests and observation, logistic regression proves to be a reasonable
 
 
 
-
-Figure 8: Confusion matrix
-
+<p align="center">
+<br>Figure 8: Confusion matrix</br>
+</p>
    The confusion matrix shown above (Figure 8) shows the performance of our model. Our model made 126 True Positive predictions, 15 False Positive predictions, and 1 False Negative prediction on the test set.
    The random forest model, with its ability to encapsulate complex structures in the data, proved to be a superior choice over logistic regression for this task. Its robust performance metrics and significant feature importances provide valuable insights into the dataset, allowing us to retain a relatively accurate model on predicting health status based on demographic and behavioral data.
 
 	
-4  Conclusion and Future Works
+## 4  Conclusion and Future Works
 	
    This project’s evolution from logistic regression to random forest classification underscores the adaptability required for data analysis. Despite initial assumptions, logistic regression’s limitations necessitated a shift to a more complex model. The random forest approach yielded a more accurate predictive model which could help us draw more insightful results. The feature importance echoed our initial hypothesis, placid sleep and education as pivotal in predicting health outcomes. This not only validated our theoretical suppositions but also offered a tangible roadmap for potential policy implications, highlighting areas where intervention could be most impactful. This project showcases the necessity of an iterative, data-driven approach to model selection and the importance of aligning our modeling strategies with the patterns and characteristics our data holds. 
 	For future works, we suggest investigations into determinants of sleep duration, which our analysis indicated as the most significant predictor of health status. Such studies could include examining lifestyle factors, stress levels, and even technology use and how they affect sleep. Optimizing leep may emerge as a key factor in promoting health, calling for policies that address sleep hygiene as a part of a comprehensive public health strategy. 

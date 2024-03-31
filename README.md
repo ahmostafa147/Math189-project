@@ -1,7 +1,7 @@
 
 ---
-<p align="center">
-# Understanding Well-Being: How Demographic and Behaviors Shape Health
+<p align="center" font="10px>
+Understanding Well-Being: How Demographic and Behaviors Shape Health
 </p>
 
 ---

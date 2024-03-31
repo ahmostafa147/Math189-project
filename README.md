@@ -5,10 +5,14 @@ Understanding Well-Being: How Demographic and Behaviors Shape Health
 
 ---
 
-Huiting Chen, 
+Huiting Chen,
+
 Yijun Luo,
+
 Ahmed Mostafa,
+
 Justin Seo,
+
 Sabrina Wang.
 
 ---

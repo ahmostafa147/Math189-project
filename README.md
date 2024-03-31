@@ -50,15 +50,22 @@ Previous analyses on this dataset (and similar datasets) have predominantly focu
 The exploratory data analysis phase of our research was designed to assess the structure, peculiarities, and patterns in the data. Before utilizing the dataset, we ensure a comprehensive evaluation without the interference of missing values, as confirmed by our initial missing values check, which returned zero missing values across all variables.
 In our exploratory data analysis (EDA), the foundational stage commenced with meticulous data cleaning procedures. This critical step encompassed a thorough review aimed at verifying the accuracy of each variable's data type while simultaneously purging the dataset of any redundant or extraneous records. Through this rigorous cleaning process, our dataset underwent meticulous scrutiny, ensuring its integrity and completeness. Subsequently, a comprehensive assessment confirmed the absence of any missing values, signifying the robustness of our dataset. Moreover, the examination revealed that no adjustments to data types were warranted, further attesting to the pristine quality of our dataset.
 Subsequently, we conducted visual exploratory analysis. The pairplot (Figure 1) generated a matrix of scatter plots that provided a pairwise comparison of the variables, with different colors indicating the status of self-reported health. These scatter plots revealed the distribution of each variable and the relationships between them, although no strong linear relationship was apparent between variables of our interest. The hue of good health indicated varying distributions on the two health status (good health or not), providing preliminary insights into potential factors associated with the gdhlth variable.
+
+<p align="center">
 **Figure 1: Pairplot**
+</p>
 
 We employed box plots as a robust visualization tool to delve deeper into the distribution of three key variables: sleep duration, nap duration, and total work time (Figure 2). These plots served as effective means to scrutinize the data, particularly for detecting potential outliers. Upon examination, it was evident that sleep duration and nap duration exhibited relatively standard spreads, indicative of consistent patterns among respondents. Conversely, the box plot for total work time revealed a broader range, highlighting significant variability in working hours across the sampled population. Each variable was depicted through its individual box plot, where the box delineated the interquartile range (IQR), the median was represented by a central line, and the whiskers extended to encompass the minimum and maximum values within 1.5 times the IQR from the first and third quartiles. Leveraging the capabilities of the Plotly Express library, we integrated interactive features such as hover information and zooming functionalities into our plots. These enhancements facilitated a more dynamic exploration of the data encapsulated within the box plots, enabling a richer understanding of the underlying trends and patterns.
 
+<p align="center">
 **Figure 2: Boxplot**
-	
+</p>
+
 Utilizing the seaborn library, we crafted a visually informative heatmap (Figure 3) to unveil the intricate web of correlations within our dataset. Each cell of the heatmap was meticulously shaded to reflect the magnitude and directionality of the correlations, with a spectrum of colors denoting varying correlation strengths. Embedded within each cell were correlation coefficients, offering succinct insights into the relational dynamics between variables. This intuitive visualization served as a compass, guiding our exploration of inter-variable associations, particularly honing in on the strength and polarity of these correlations. Notably, the heatmap brought to light a robust positive correlation between sleep duration and nap duration, unveiling a significant relationship that would significantly influence our subsequent modeling endeavors. 
 
+<p align="center">
 **Figure 3: Heatmap**
+</p>
 
 To conclude, EDA plays a pivotal role in the project serving as the foundation for understanding the underlying structure, patterns, and relationships within the dataset. Through techniques such as data visualization, summary statistics, and correlation analysis, EDA empowers us to make informed decisions regarding data preprocessing, feature engineering, and model selection. By uncovering insights and potential challenges early in the project lifecycle, EDA not only enhances the accuracy and reliability of the final machine learning model but also fosters a deeper understanding of the problem domain.
 
@@ -77,16 +84,21 @@ The application of logistic regression in our study is predicated on its suitabi
 In compliance with the assumptions underlying logistic regression, we first verified that the response variable follows a Bernoulli distribution. The variables of interest in our dataset (9 columns except our response variable ‘gdhlth’ listed in section 2.1) are all predictors for which we are predicting the probability of the outcome (good health). 
 To satisfy the assumption that the residuals should be randomly distributed, we examined the scatter plots (Figure 4) of the residuals against the predicted probabilities and the fitted values. There is a clear pattern where most residuals cluster around 0 but then fan out as we move down the y-axis. This implies that the model fits certain ranges of the data well but less well as the value of the independent variable increases/decreases, leading to larger error. Despite the observed heteroscedasticity in the residuals, which suggests a potential violation of assumptions underlying logistic regression, we decided to proceed with the analysis. Our decision was motivated by the desire to explore the model’s capabilities and to understand the insights that could still be gleaned from it. Recognizing that real world data often presents such irregularities, we aimed to see how the model performed overall, which could still provide valuable information for interpreting the results and guiding future analyses.
 
+<p align="center">
 **Figure 4: Residual Plot**
+</p>
 
 Upon fitting the logistic regression model, we assessed the linearity of the log-odds function against predictors. In plotting the log-odds against each predictor (Figure 5), we can see that all of our quantitative predictors chosen (education, sleep, sleep naps, and total work) show a roughly linear relationship with health status, which did not suggest any significant departure from the assumption.
 
+<p align="center">
 **Figure 5: Log-odds against predictors**
-
+</p>
 
 The model's predictive power was further tested using the confusion matrix, Receiver Operating Characteristic (ROC) curve (Figure 6), and with an Area Under Curve (AUC) score of approximately 0.736. This score indicates a reasonable ability to discriminate between the two health status outcomes, with a value close to 1 being ideal. The confusion matrix shows the model has a high true positive rate (0.995) but a low true negative rate (0.091), suggesting that while the model is effective at identifying individuals in good health, it struggles to correctly predict those in poor health. This is also reflected in the high false positive rate (0.909), where individuals in poor health are frequently misclassified as healthy. The significant imbalance in predictive performance highlights the model’s limitations and suggests a need for improvement to ensure a balanced representation of health outcomes.
 
+<p align="center">
 **Figure 6: ROC Curve**
+</p>
 
 Through our tests and observation, logistic regression proves to be a reasonable approach for our dataset but with limitations, allowing us to further refine a logistic regression model to draw meaningful insights into the determinants of health status.
 
@@ -98,7 +110,10 @@ Through our tests and observation, logistic regression proves to be a reasonable
    Our initial version of the logistic regression model, which solely included main effects without interactions, did not perform optimally. This version likely failed to capture the complex interdependencies between variables, which can be crucial for accurately predicting health outcomes. In reality, the relationship between predictors and an individual’s health status is often not purely additive; instead, the effect of one variable can depend on the level of another. Ignoring these interactions can lead to oversimplified models that miss important patterns in the data.
    In response to the shortcomings of our first model, we introduce interaction terms between variables in the second version of the model. These terms allowed us to explore how the combination of different predictors affects the likelihood of reporting good health. For example, the interaction between age and napping behavior (‘age: hadnap’) provided new insights that were not apparent when considering them separately. The improved model with interaction terms exhibited better performance, suggesting that the relationship between certain predictors are multiplicative rather than additive. 
    To validate the robustness of our enhanced model, we conducted cross-validation, which is a resampling procedure used to evaluate a model if the data is limited. We repeatedly split the data into training and testing sets, and fitting and testing the model. The cross-validation results affirmed the superiority of the second model, confirming that incorporation of interactions between variables provided a more accurate and reliable representation of the factors influencing health outcomes.
+   
+<p align="center">
 **Figure 7: Confusion matrix**
+</p>
 
    Lastly as part of model diagnostics, we scrutinized the confusion matrix at the decision threshold of 0.5. The results exhibited that we have successfully increased the true positive/negative rates, and decreased the false rates  (by 0.002 and 0.026 respectively). However, our model still has a high false positive rate and a low true negative rate. Although we valued the improvement of the model through our training, we are not satisfied with our final model’s predictive power, so we decided to take another approach, utilizing random forest classification.
 	
@@ -126,6 +141,7 @@ Through our tests and observation, logistic regression proves to be a reasonable
 <p align="center">
 <br>Figure 8: Confusion matrix</br>
 </p>
+
    The confusion matrix shown above (Figure 8) shows the performance of our model. Our model made 126 True Positive predictions, 15 False Positive predictions, and 1 False Negative prediction on the test set.
    The random forest model, with its ability to encapsulate complex structures in the data, proved to be a superior choice over logistic regression for this task. Its robust performance metrics and significant feature importances provide valuable insights into the dataset, allowing us to retain a relatively accurate model on predicting health status based on demographic and behavioral data.
 

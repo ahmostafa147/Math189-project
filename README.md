@@ -153,7 +153,7 @@ Through our tests and observation, logistic regression proves to be a reasonable
 
 
 <p align="center">
-<img src = "images/randomdorestconf.png">
+<img src = "images/randomforestconf.png">
 	
 **Figure 8: Confusion matrix**
 </p>

@@ -1,6 +1,6 @@
 
 ---
-<p align="center" font="10px>
+<p align="center">
 Understanding Well-Being: How Demographic and Behaviors Shape Health
 </p>
 

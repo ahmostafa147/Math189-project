@@ -6,13 +6,21 @@
 ---
 <p align="center">
 Huiting Chen,
+</p>
 
+<p align="center">
 Yijun Luo,
+</p>
 
+<p align="center">
 Ahmed Mostafa,
+</p>
 
+<p align="center">
 Justin Seo,
+</p>
 
+<p align="center">
 Sabrina Wang.
 </p>
 ---

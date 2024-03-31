@@ -170,6 +170,5 @@ References
       https://www.kaggle.com/code/naimishbhoi/sleep-patterns-with-pandas
       
 [3] Giacometti, Alessandro. (2024). Sleep Health Analysis-How to Sleep Better. Kaggle.
-
       https://www.kaggle.com/code/alessandrogiacometti/sleep-health-analysis-how-to-sleep-better
 

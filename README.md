@@ -70,6 +70,7 @@ Utilizing the seaborn library, we crafted a visually informative heatmap (Figure
 <p align="center">
 <img src = "images/heatmap.png">
 
+
 **Figure 3: Heatmap**
 </p>
 
@@ -91,7 +92,7 @@ In compliance with the assumptions underlying logistic regression, we first veri
 To satisfy the assumption that the residuals should be randomly distributed, we examined the scatter plots (Figure 4) of the residuals against the predicted probabilities and the fitted values. There is a clear pattern where most residuals cluster around 0 but then fan out as we move down the y-axis. This implies that the model fits certain ranges of the data well but less well as the value of the independent variable increases/decreases, leading to larger error. Despite the observed heteroscedasticity in the residuals, which suggests a potential violation of assumptions underlying logistic regression, we decided to proceed with the analysis. Our decision was motivated by the desire to explore the model’s capabilities and to understand the insights that could still be gleaned from it. Recognizing that real world data often presents such irregularities, we aimed to see how the model performed overall, which could still provide valuable information for interpreting the results and guiding future analyses.
 
 <p align="center">
-<img src = "images/residuals.png">
+<img src = "images/redisuals.png">
 	
 **Figure 4: Residual Plot**
 </p>

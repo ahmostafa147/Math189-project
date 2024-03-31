@@ -165,8 +165,11 @@ References
 
 [1] Kapturov, Alexander. (2024). Sleep Patterns. Kaggle.
       https://www.kaggle.com/datasets/kapturovalexander/sleep-patterns
+      
 [2] Bohi, Naimish. (2024). Sleep Patterns with Pandas. Kaggle.
       https://www.kaggle.com/code/naimishbhoi/sleep-patterns-with-pandas
+      
 [3] Giacometti, Alessandro. (2024). Sleep Health Analysis-How to Sleep Better. Kaggle.
+
       https://www.kaggle.com/code/alessandrogiacometti/sleep-health-analysis-how-to-sleep-better
 

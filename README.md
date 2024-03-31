@@ -5,15 +5,15 @@
 
 ---
 
-Huiting Chen,
+:Huiting Chen:,
 
-Yijun Luo,
+:Yijun Luo:,
 
-Ahmed Mostafa,
+:Ahmed Mostafa:,
 
-Justin Seo,
+:Justin Seo:,
 
-Sabrina Wang.
+:Sabrina Wang:.
 
 ---
 

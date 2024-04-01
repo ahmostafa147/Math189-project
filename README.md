@@ -70,8 +70,9 @@ Utilizing the seaborn library, we crafted a visually informative heatmap (Figure
 <p align="center">
 <img src = "images/heatmap.png">
 
-
+<div>
 **Figure 3: Heatmap**
+	</div>
 </p>
 
 To conclude, EDA plays a pivotal role in the project serving as the foundation for understanding the underlying structure, patterns, and relationships within the dataset. Through techniques such as data visualization, summary statistics, and correlation analysis, EDA empowers us to make informed decisions regarding data preprocessing, feature engineering, and model selection. By uncovering insights and potential challenges early in the project lifecycle, EDA not only enhances the accuracy and reliability of the final machine learning model but also fosters a deeper understanding of the problem domain.
@@ -93,24 +94,27 @@ To satisfy the assumption that the residuals should be randomly distributed, we 
 
 <p align="center">
 <img src = "images/redisuals.png">
-	
+	<div>
 **Figure 4: Residual Plot**
+		</div>
 </p>
 
 Upon fitting the logistic regression model, we assessed the linearity of the log-odds function against predictors. In plotting the log-odds against each predictor (Figure 5), we can see that all of our quantitative predictors chosen (education, sleep, sleep naps, and total work) show a roughly linear relationship with health status, which did not suggest any significant departure from the assumption.
 
 <p align="center">
 <img src = "images/logodds.png">
-	
+	<div>
 **Figure 5: Log-odds against predictors**
+		</div>
 </p>
 
 The model's predictive power was further tested using the confusion matrix, Receiver Operating Characteristic (ROC) curve (Figure 6), and with an Area Under Curve (AUC) score of approximately 0.736. This score indicates a reasonable ability to discriminate between the two health status outcomes, with a value close to 1 being ideal. The confusion matrix shows the model has a high true positive rate (0.995) but a low true negative rate (0.091), suggesting that while the model is effective at identifying individuals in good health, it struggles to correctly predict those in poor health. This is also reflected in the high false positive rate (0.909), where individuals in poor health are frequently misclassified as healthy. The significant imbalance in predictive performance highlights the model’s limitations and suggests a need for improvement to ensure a balanced representation of health outcomes.
 
 <p align="center">
 <img src = "images/ROCcurve.png">
-
+<div>
 **Figure 6: ROC Curve**
+	</div>
 </p>
 
 Through our tests and observation, logistic regression proves to be a reasonable approach for our dataset but with limitations, allowing us to further refine a logistic regression model to draw meaningful insights into the determinants of health status.
@@ -126,8 +130,9 @@ Through our tests and observation, logistic regression proves to be a reasonable
    
 <p align="center">
 <img src = "images/logisticcm.png">
-
+<div>
 **Figure 7: Confusion matrix**
+	</div>
 </p>
 
    Lastly as part of model diagnostics, we scrutinized the confusion matrix at the decision threshold of 0.5. The results exhibited that we have successfully increased the true positive/negative rates, and decreased the false rates  (by 0.002 and 0.026 respectively). However, our model still has a high false positive rate and a low true negative rate. Although we valued the improvement of the model through our training, we are not satisfied with our final model’s predictive power, so we decided to take another approach, utilizing random forest classification.
